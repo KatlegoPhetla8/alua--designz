@@ -5,11 +5,33 @@ import LoadSpinner from '../ReUsed Components/LoadSpinner';
 
 function OurServices() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  const imageBackgrounds = [
+    "/Service Page/cleaning.png",
+    "/Service Page/interior.png",
+    "/Service Page/blinds.png",
+    "/Service Page/digital.png",
+    "/Service Page/admin.png",
+    "/Service Page/catering.png",
+    "/Service Page/transport.png",
+    "/Service Page/outsourcing.png",
+    "/Service Page/business.png",
+  ]
 
   useEffect(()=>{
-    const img = new window.Image();
-    img.src = "/Service Page/cleaning.png"
-    img.onload = () =>setIsLoaded(true)
+    let imageLoadCounter = 0;
+    imageBackgrounds.forEach((srcImg)=>{
+      const img = new Image();
+      img.src = srcImg;
+      img.onload = () =>{
+        imageLoadCounter++;
+        if(imageLoadCounter === imageBackgrounds.length){
+          setImagesLoaded(true);
+          setIsLoaded(true);
+        }
+      }
+    });
   
   },[]);
 
@@ -69,7 +91,8 @@ function OurServices() {
       }
     }}
     bgSize={"cover"} 
-    bgImage="url('Service Page/cleaning.png')">
+    bgImage="url('Service Page/cleaning.png')"
+    >
     <Box>
       <Text
       px={"1rem"}

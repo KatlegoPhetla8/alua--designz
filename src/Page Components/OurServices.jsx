@@ -73,7 +73,6 @@ function OurServices() {
     w={"100%"} 
     h={"5rem"} 
     bgSize={"cover"} 
-    
     bgImage="url('Service Page/cleaning.png')" >
     Cleaning Services
     </CollapsibleTrigger>

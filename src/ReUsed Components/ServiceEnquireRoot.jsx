@@ -13,7 +13,7 @@ const [inputs, setInputs] = useState({
     fullName:"",
     email:"",
     companyName:"",
-    ServiceEnquire: pickedService,
+    serviceEnquire: pickedService,
     contactNum:"",
     message:""
    });
@@ -33,7 +33,7 @@ const [inputs, setInputs] = useState({
       fullName:"",
       email:"",
       companyName:"",
-      ServiceEnquire: pickedService,
+      serviceEnquire: pickedService,
       contactNum:"",
       message:""
     })
@@ -114,7 +114,7 @@ const [inputs, setInputs] = useState({
               </FieldLabel>
               <Input 
               value={inputs.companyName}
-              required
+
               w={{base:"80%",md:"80%",lg:"50%"}}  
               bgColor={"whiteAlpha.800"} 
               border={"none"} 
